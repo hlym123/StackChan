@@ -304,6 +304,15 @@ index 7bc917b..874b137 100644
  };
  
  #endif // I2C_DEVICE_H
+diff --git a/main/audio/processors/afe_audio_processor.cc b/main/audio/processors/afe_audio_processor.cc
+index 15e9cc5..42d53e1 100644
+--- a/main/audio/processors/afe_audio_processor.cc
++++ b/main/audio/processors/afe_audio_processor.cc
+@@ -40,3 +40,3 @@ void AfeAudioProcessor::Initialize(AudioCodec* codec, int frame_duration_ms, srm
+     afe_config_t* afe_config = afe_config_init(input_format.c_str(), NULL, AFE_TYPE_VC, AFE_MODE_HIGH_PERF);
+-    afe_config->aec_mode = AEC_MODE_VOIP_HIGH_PERF;
++    afe_config->aec_mode = AEC_MODE_VOIP_LOW_COST;
+     afe_config->vad_mode = VAD_MODE_0;
 diff --git a/main/audio/audio_service.cc b/main/audio/audio_service.cc
 index 350ac58..81a746c 100644
 --- a/main/audio/audio_service.cc
